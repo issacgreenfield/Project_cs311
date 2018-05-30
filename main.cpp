@@ -6,7 +6,12 @@
 #include <cctype>
 using namespace std;
 
-int[][] dfaArray = 	{1, 3, 3, 4, 0, 0, 0}, 
+//function prototypes
+bool readFile();
+int dfaChecker(char terminal, int lastVar);
+
+//global variables
+int dfaArray[9][7] = 	{{1, 3, 3, 4, 0, 0, 0}, 
 			{1, 0, 0, 2, 6, 6, 0},
 			{2, 0, 0, 0, 6, 6, 0},
 			{1, 0, 0, 4, 0, 0, 0},
@@ -14,23 +19,38 @@ int[][] dfaArray = 	{1, 3, 3, 4, 0, 0, 0},
 			{5, 0, 0, 0, 6, 6, 0},
 			{8, 7, 7, 0, 0, 0, 0},
 			{8, 0, 0, 0, 0, 0, 0},
-			{8, 0, 0, 0, 0, 0, 0};
+			{8, 0, 0, 0, 0, 0, 0}};
+char testArray[7] = {'-', '-', '.', '5', '6', 'e', '3'};
 
 int main()
 {
-
+	int variable = 0;
+	for(int i = 0; i < 7; i++)
+	{
+		variable = dfaChecker(testArray[i], variable);
+		if (variable == 0)
+		{
+			cout << "failed" << endl;
+		}else 
+		{
+			cout << "fine so far" << endl;
+		}
+	}
+	return 0;
 }
 
 bool readFile()
 {
+	return true;
 }
+
 
 
 //returns an int that determines the next state to transition to
 //A return of 0 indicates a fail state
-int dfaArray(char terminal, int lastVar)
+int dfaChecker(char terminal, int lastVar)
 {
-	switch terminal
+	switch (terminal)
 	{
 		case '1':
 		case '2':
@@ -57,5 +77,6 @@ int dfaArray(char terminal, int lastVar)
 		default:
 			return 0;
 	}
+	return 0;
 }
 
