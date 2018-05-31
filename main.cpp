@@ -9,7 +9,7 @@
 
 using namespace std;
 
-/*int [][] dfaArray  = 	{1, 3, 3, 4, 0, 0, 0}, 
+int dfaArray [9][7]  = 	{{1, 3, 3, 4, 0, 0, 0}, 
 			{1, 0, 0, 2, 6, 6, 0},
 			{2, 0, 0, 0, 6, 6, 0},
 			{1, 0, 0, 4, 0, 0, 0},
@@ -17,8 +17,8 @@ using namespace std;
 			{5, 0, 0, 0, 6, 6, 0},
 			{8, 7, 7, 0, 0, 0, 0},
 			{8, 0, 0, 0, 0, 0, 0},
-			{8, 0, 0, 0, 0, 0, 0};
-*/
+			{8, 0, 0, 0, 0, 0, 0}};
+
 
 
 int read_file()
@@ -49,7 +49,7 @@ int main()
 
 //returns an int that determines the next state to transition to
 //A return of 0 indicates a fail state
-/*int dfaArray(char terminal, int lastVar)
+int dfaArray(char terminal, int lastVar)
 {
 	switch terminal
 	{
@@ -79,4 +79,3 @@ int main()
 			return 0;
 	}
 }
-*/
